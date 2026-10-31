@@ -285,5 +285,16 @@
     });
 })();
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  /* Si el enlace de invitación de Netlify abre la página principal con un token,
+     redirige al panel /admin, donde el widget muestra el formulario para crear la contraseña. */
+  (function () {
+    var hash = window.location.hash || '';
+    if (hash.indexOf('invite_token') !== -1 || hash.indexOf('confirmation_token') !== -1 || hash.indexOf('recovery_token') !== -1) {
+      window.location.href = '/admin/' + hash;
+    }
+  })();
+</script>
 </body>
 </html>
