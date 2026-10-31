@@ -1,0 +1,121 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Contenido del sitio"
+    files:
+      - file: "content.json"
+        label: "Textos de la página"
+        name: "content"
+        fields:
+          - { label: "Aviso de borrador", name: "draft_banner", widget: "string" }
+          - label: "Héroe (parte superior)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño superior", name: "eyebrow", widget: "string" }
+              - { label: "Título principal", name: "title", widget: "string" }
+              - { label: "Subtítulo", name: "subtitle", widget: "text" }
+              - { label: "Botón principal", name: "primary_button", widget: "string" }
+              - { label: "Botón secundario", name: "secondary_button", widget: "string" }
+              - { label: "Nota bajo los botones", name: "note", widget: "string" }
+          - label: "Franja de confianza"
+            name: "trust_bar"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "string" }
+          - label: "Servicios"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Introducción", name: "intro", widget: "text" }
+              - label: "Lista de servicios (6)"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre del servicio", name: "name", widget: "string" }
+                  - { label: "Descripción", name: "description", widget: "text" }
+                  - { label: "Para quién (ej. casas, negocios)", name: "audience", widget: "string" }
+              - label: "Destacados bajo los servicios"
+                name: "highlights"
+                widget: "list"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "string" }
+          - label: "Sección comercial"
+            name: "commercial"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "intro", widget: "text" }
+              - { label: "Tipos de negocio", name: "types", widget: "list", field: { name: "type", widget: "string" } }
+              - label: "Puntos destacados"
+                name: "points"
+                widget: "list"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text" }
+              - { label: "Botón principal", name: "primary_button", widget: "string" }
+              - { label: "Botón secundario", name: "secondary_button", widget: "string" }
+          - label: "Historia"
+            name: "story"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Párrafos", name: "paragraphs", widget: "list", field: { name: "paragraph", widget: "text" } }
+              - label: "Cifras (3, 10, 15, hoy)"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Cifra", name: "value", widget: "string" }
+                  - { label: "Etiqueta", name: "label", widget: "string" }
+              - label: "Hitos de la línea de tiempo"
+                name: "milestones"
+                widget: "list"
+                fields:
+                  - { label: "Título del hito", name: "title", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text" }
+          - label: "Pasos para empezar"
+            name: "steps"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - label: "Pasos"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Título del paso", name: "title", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text" }
+          - label: "Llamado final (contacto)"
+            name: "contact_cta"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+              - { label: "Etiqueta del botón de teléfono", name: "phone_label", widget: "string" }
+              - { label: "Etiqueta del botón de correo", name: "email_label", widget: "string" }
+              - { label: "Etiqueta del área", name: "area_label", widget: "string" }
+              - { label: "Área de servicio", name: "area", widget: "string" }
+          - label: "Contacto"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Teléfono", name: "phone", widget: "string" }
+              - { label: "Correo", name: "email", widget: "string" }
+              - { label: "Área de servicio", name: "area", widget: "string" }
+          - label: "Pie de página"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Línea del pie", name: "line", widget: "string" }
